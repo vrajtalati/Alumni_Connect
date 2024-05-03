@@ -17,6 +17,8 @@ const Signup = () => {
   const [email, setEmail] = useState();
   const [company,setCompany]=useState();
   const [year,setYear]=useState();
+  const [resume,setResume]=useState();
+
   const [confirmpassword, setConfirmpassword] = useState();
   const [password, setPassword] = useState();
   const [pic, setPic] = useState();
@@ -46,7 +48,7 @@ const Signup = () => {
       setPicLoading(false);
       return;
     }
-    console.log(name, email,company,year, password, pic);
+    console.log(name, email,company,year,resume, password, pic);
     try {
       const config = {
         headers: {
@@ -60,6 +62,7 @@ const Signup = () => {
           email,
           company,
           year,
+          resume,
           password,
           pic,
         },
@@ -167,6 +170,14 @@ const Signup = () => {
         <Input
           placeholder="Enter Your Passing Year"
           onChange={(e) => setYear(e.target.value)}
+        />
+      </FormControl>
+
+      <FormControl id="company" >
+        <FormLabel>Resume</FormLabel>
+        <Input
+          placeholder="Enter Link of your resume here"
+          onChange={(e) => setResume(e.target.value)}
         />
       </FormControl>
 

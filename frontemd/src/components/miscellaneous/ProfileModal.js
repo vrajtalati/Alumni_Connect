@@ -12,6 +12,8 @@ import {
   IconButton,
   Text,
   Image,
+  Link ,
+  ExternalLinkIcon
 } from "@chakra-ui/react";
 
 const ProfileModal = ({ user, children }) => {
@@ -49,7 +51,7 @@ const ProfileModal = ({ user, children }) => {
               alt={user.name}
             />
             <Text
-              fontSize={{ base: "28px", md: "30px" }}
+              fontSize={{ base: "18px", md: "20px" }}
               fontFamily="Work sans"
             >
               Email: {user.email}
@@ -57,7 +59,7 @@ const ProfileModal = ({ user, children }) => {
 
 
             <Text
-              fontSize={{ base: "28px", md: "30px" }}
+              fontSize={{ base: "18px", md: "20px" }}
               fontFamily="Work sans"
             >
               
@@ -66,12 +68,16 @@ const ProfileModal = ({ user, children }) => {
 
 
             <Text
-              fontSize={{ base: "28px", md: "30px" }}
+              fontSize={{ base: "18px", md: "20px" }}
               fontFamily="Work sans"
             >
               
               Passout Year: {user.year}
             </Text>
+
+            <Link  fontSize={{ base: "18px", md: "20px" }}     fontFamily="Work sans"  href='https://chakra-ui.com' isExternal>
+               Resume
+            </Link>
 
 
           </ModalBody>

@@ -10,8 +10,9 @@ const allUsers = asyncHandler(async (req, res) => {
     ? {
         $or: [
           { name: { $regex: req.query.search, $options: "i" } },
-          { email: { $regex: req.query.search, $options: "i" } },
+          // { email: { $regex: req.query.search, $options: "i" } },
           { company: { $regex: req.query.search, $options: "i" }},
+          { year:req.query.search},
         ],
       }
     : {};
@@ -24,7 +25,7 @@ const allUsers = asyncHandler(async (req, res) => {
 //@route           POST /api/user/
 //@access          Public
 const registerUser = asyncHandler(async (req, res) => {
-  const { name, email,company,year, password, pic } = req.body;
+  const { name, email,company,year,resume, password, pic } = req.body;
 
   if (!name || !email || !password) {
     res.status(400);
@@ -43,6 +44,7 @@ const registerUser = asyncHandler(async (req, res) => {
     email,
     company,
     year,
+    resume,
     password,
     pic,
   });
@@ -55,7 +57,8 @@ const registerUser = asyncHandler(async (req, res) => {
       email: user.email,
       company:user.company,
       year:user.year,
-      isAdmin: user.isAdmin,
+      resume:user.resume,
+        isAdmin: user.isAdmin,
       pic: user.pic,
       token: generateToken(user._id),
     });
@@ -80,6 +83,7 @@ const authUser = asyncHandler(async (req, res) => {
       email: user.email,
       company:user.company,
       year:user.year,
+      resume:user.resume,
       isAdmin: user.isAdmin,
       pic: user.pic,
       token: generateToken(user._id),
