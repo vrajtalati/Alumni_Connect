@@ -46,7 +46,7 @@ const Signup = () => {
       setPicLoading(false);
       return;
     }
-    console.log(name, email, password, pic);
+    console.log(name, email,company,year, password, pic);
     try {
       const config = {
         headers: {
@@ -58,6 +58,8 @@ const Signup = () => {
         {
           name,
           email,
+          company,
+          year,
           password,
           pic,
         },

@@ -37,6 +37,10 @@ const UserListItem = ({user,handleFunction }) => {
           <b>Email : </b>
           {user.email}
         </Text>
+        <Text fontSize="xs">
+          <b>Company : </b>
+          {user.company}
+        </Text>
       </Box>
     </Box>
   );

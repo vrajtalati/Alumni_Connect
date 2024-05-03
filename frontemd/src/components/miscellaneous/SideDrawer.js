@@ -142,16 +142,17 @@ function SideDrawer() {
       >
         <div style={{display:"flex", justifyContent:"space-between"}}>
         <Tooltip label="Search Users to chat" hasArrow placement="bottom-end">
-          <Button colorScheme='blue' w="30%" variant="outline" px={9} py={5} mx={10} onClick={onOpen}>
+          <Button colorScheme='blue' w="20%" variant="outline" px={9} py={5} mx={10} onClick={onOpen}>
             <i className="fas fa-search"></i>
             <Flex  fontSize="xl" d={{ base: "none", md: "flex" }} px={4}>
               Search User Here
             </Flex>
           </Button>
         </Tooltip>
-        <Flex colorScheme='blue' boxShadow='outline'  w="40%" mx="30%" mt="3"  justifyContent={"center"} fontSize="4xl" fontFamily="Work sans">
-          Talk-A-Tive
+        <Flex colorScheme='blue' boxShadow='outline'  w="40%" mr="25%" mt="3"  justifyContent={"center"} fontSize="4xl" fontFamily="Work sans">
+          Alumni-Connect
         </Flex>
+
         </div>
         <div>
           <Menu>

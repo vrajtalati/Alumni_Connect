@@ -37,7 +37,7 @@ function Homepage() {
       >
         <Flex  fontSize="4xl"  d={Flex}
         justifyContent="center"  alignItems="center"   fontFamily="Work sans">
-          Talk-A-Tive
+          Alumni-Connect
         </Flex>
       </Box>
       <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px">
