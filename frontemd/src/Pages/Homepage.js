@@ -13,6 +13,7 @@ import { useEffect } from "react";
 import { useHistory } from "react-router";
 import Login from "../components/Authentication/Login";
 import Signup from "../components/Authentication/Signup";
+import BackgrndImage from "../backgrnd.jpg";
 
 function Homepage() {
   const history = useHistory();
@@ -24,12 +25,16 @@ function Homepage() {
   }, [history]);
 
   return (
-    <Container maxW="xl" centerContent>
+    <div style={{ margin:"5%", width:'100%', height:'100%', display:'flex', flexDirection:'row'}} >
+
+      <div style={{ width:'50%'}}>
+      <Container maxW="xl"  centerContent>
       <Box
         d="flex"
         justifyContent="center"
         p={3}
         bg="white"
+        opacity={0.9}
         w="100%"
         m="40px 0 15px 0"
         borderRadius="lg"
@@ -40,7 +45,10 @@ function Homepage() {
           Alumni-Connect
         </Flex>
       </Box>
-      <Box bg="white" w="100%" p={4} borderRadius="lg" borderWidth="1px">
+      <Box bg="white"
+       w="100%" p={4}
+        
+        borderRadius="lg" borderWidth="1px">
         <Tabs isFitted variant="soft-rounded">
           <TabList mb="1em">
             <Tab>Login</Tab>
@@ -57,6 +65,10 @@ function Homepage() {
         </Tabs>
       </Box>
     </Container>
+      </div>
+      <div style={{ display:"flex", justifyItems:"center",alignItems:"center",  width:'50%'}} > <img src={BackgrndImage}/></div>
+    
+    </div>
   );
 }
 
